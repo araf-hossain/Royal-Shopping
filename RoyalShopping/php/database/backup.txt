@@ -1,0 +1,87 @@
+/*
+SQLyog Enterprise - MySQL GUI v7.02 
+MySQL - 5.0.45-community-nt : Database - royal
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`royal` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `royal`;
+
+/*Table structure for table `cata_info` */
+
+DROP TABLE IF EXISTS `cata_info`;
+
+CREATE TABLE `cata_info` (
+  `cata_id` varchar(30) character set utf8 collate utf8_unicode_ci NOT NULL default '',
+  `item_name` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  `cata_name` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`cata_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `cata_info` */
+
+insert  into `cata_info`(`cata_id`,`item_name`,`cata_name`) values ('1','Electronics','Laptop'),('10','Clothes','Boys'),('11','Clothes','Baby'),('12','Books','The Tale of Two Cities'),('13','Shoes','Business Shoes'),('14','Shoes','Boots'),('15','Decoration Tools','Home Decoration'),('16','Decoration Tools','Wedding Decoration'),('17','Decoration Tools','Business Decoration'),('18','Decoration Tools','Party Decoration'),('19','Decoration Tools','Concert Decoration'),('2','Electronics','Computers & Accessories'),('20','Video Games','Action'),('21','Video Games','Adventure'),('22','Video Games','Puzzle'),('23','Video Games','Racing'),('24','Video Games','Role-Playing'),('25','Video Games','Arcade'),('26','Sports','Athletic Clothes'),('27','Sports','Exercise & Fitness'),('28','Sports','All Sports Shoes'),('29','Sports','Sports Collectibles'),('3','Electronics','Headphones'),('30','Shoes','Boys'),('31','Books','Harry Potter and the Philosoph'),('4','Electronics','Smart Phone'),('5','Electronics','Camera'),('6','Electronics','Smart TV'),('7','Clothes','Women'),('8','Clothes','Men'),('9','Clothes','Girls');
+
+/*Table structure for table `create_admin` */
+
+DROP TABLE IF EXISTS `create_admin`;
+
+CREATE TABLE `create_admin` (
+  `first` varchar(20) character set utf8 collate utf8_unicode_ci default NULL,
+  `last` varchar(20) character set utf8 collate utf8_unicode_ci default NULL,
+  `email` varchar(30) character set utf8 collate utf8_unicode_ci NOT NULL default '',
+  `password` varchar(50) character set utf8 collate utf8_unicode_ci default NULL,
+  `dob` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  `gender` varchar(20) character set utf8 collate utf8_unicode_ci default NULL,
+  `number` varchar(30) character set utf8 collate utf8_unicode_ci NOT NULL,
+  `location` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`email`,`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `create_admin` */
+
+insert  into `create_admin`(`first`,`last`,`email`,`password`,`dob`,`gender`,`number`,`location`) values ('Araf','Hossain','arafhossain@gmail.com','araf','21-05-1998','Male','01798665933','Bangladesh'),('araf','hossain','arafhossain9','araf','09-10-1998','Male','01798665933','Bangladesh');
+
+/*Table structure for table `item_info` */
+
+DROP TABLE IF EXISTS `item_info`;
+
+CREATE TABLE `item_info` (
+  `item_id` varchar(30) character set utf8 collate utf8_unicode_ci NOT NULL default '',
+  `item_name` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`item_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `item_info` */
+
+insert  into `item_info`(`item_id`,`item_name`) values ('1','Electronics'),('2','Clothes'),('3','Shoes'),('4','Decoration Tools'),('5','Video Games'),('6','Sports'),('7','Books');
+
+/*Table structure for table `product_info` */
+
+DROP TABLE IF EXISTS `product_info`;
+
+CREATE TABLE `product_info` (
+  `item_name` varchar(30) character set utf8 collate utf8_unicode_ci default NULL,
+  `category_name` varchar(50) character set utf8 collate utf8_unicode_ci default NULL,
+  `product_id` varchar(50) character set utf8 collate utf8_unicode_ci NOT NULL,
+  `product_name` varchar(50) character set utf8 collate utf8_unicode_ci default NULL,
+  `product_price` varchar(50) character set utf8 collate utf8_unicode_ci default NULL,
+  `product_stoke` varchar(40) character set utf8 collate utf8_unicode_ci default NULL,
+  `product_details` varchar(1000) character set utf8 collate utf8_unicode_ci default NULL,
+  PRIMARY KEY  (`product_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `product_info` */
+
+insert  into `product_info`(`item_name`,`category_name`,`product_id`,`product_name`,`product_price`,`product_stoke`,`product_details`) values ('Electronics','Laptop','EL-01','Dell XPS 13','57500','40','Processor: Intel Core i7-6500U , Speed:  2.5 GHz, RAM: 8GB, RAM TYPE: DDR3, HDD: 500GB, SCREEN SIZE: 13.3 inches,  TOUCH SCREEN DISPLAY, GRAPHICS: INTEL HD GRAPHICS, 2 USB3.0 PORTS, BATTERY: LI-LON 4 CELL, WEIGHT: 1.29KG, WARRANTY: 1 YEAR');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
